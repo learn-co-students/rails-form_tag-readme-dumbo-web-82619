@@ -1,0 +1,37 @@
+<h3>Post Form</h3>
+###Had to change some values and ID's to get the test to work properly...###
+# <%= form_tag posts_path do %>
+#     <label>Post title:</label><br>
+#     <input type="text" id="post-title" name="post[title]"><br>
+  
+#     <label>Post description:</label><br>
+#     <textarea id="post-description" name="post[description]"></textarea><br>
+  
+#     # <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+#     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+#     <input type="submit" value="Submit">
+#   <% end %>
+
+  <%= form_tag posts_path do %>
+    <label>Post title:</label><br>
+    <%= text_field_tag :'post[title]' %><br>
+  
+    <label>Post description:</label><br>
+    <%= text_area_tag :'post[description]' %><br>
+  
+    <%= submit_tag "Submit Post" %>
+  <% end %>
+
+#The above ActionView sub-gem methods generates the code below for us-->
+# <form action="/posts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="vq9SMVNk0CjwgZmYomFRhwbo5dfu7tI/2FiR7jOtlVgbj8r/zOO5oL+arU9N4PMm7WqxbUbXg4wqneW02ZfpMw==" />
+#   <label>Post title:</label><br>
+#   <input type="text" name="post[title]" id="post-title" /><br>
+
+#   <label>Post description:</label><br>
+#   <textarea name="post[description]" id="post-description">
+# </textarea><br>
+
+#   <input type="submit" name="commit" value="Submit" />
+# </form>
+
+# <%= params.inspect %>
